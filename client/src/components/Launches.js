@@ -15,9 +15,6 @@ const LAUNCHES_QUERY = gql`
   }
 `;
 
-// For Sorting iteration
-// sort((a, b) => (a.launch_date_local > b.launch_date_local ? -1 : 1));
-
 export class Launches extends Component {
   render() {
     return (
@@ -33,9 +30,13 @@ export class Launches extends Component {
 
             return (
               <Fragment>
-                {data.launches.map((launch) => (
-                  <LaunchItem key={launch.flight_number} launch={launch} />
-                ))}
+                {data.launches
+                  .sort((a, b) =>
+                    a.launch_date_local > b.launch_date_local ? -1 : 1
+                  )
+                  .map((launch) => (
+                    <LaunchItem key={launch.flight_number} launch={launch} />
+                  ))}
               </Fragment>
             );
           }}
