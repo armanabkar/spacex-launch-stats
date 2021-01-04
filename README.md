@@ -2,6 +2,12 @@
 
 > React, GraphQL, Apollo app that uses the SpaceX API to display launches
 
+<h2 align="center">
+  <img src="./screenshots.png" alt="spacex-launch-stats" width="600px" />
+  <br>
+</h2>
+
+
 ## Quick Start
 
 ```bash
