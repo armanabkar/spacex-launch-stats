@@ -26,12 +26,12 @@ code {
 
 .success {
   color: #77b300;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .fail {
   color: #cc0000;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 @media (min-width: 767px) {
@@ -57,6 +57,18 @@ code {
 .card-body {
   padding-top: 0.7rem;
   padding-bottom: 1rem;
+}
+
+.show-more {
+  margin-bottom: 1rem;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  font-size: 1.2rem;
+}
+
+.show-more:hover {
+  color: white;
 }
 
 ::-webkit-scrollbar {

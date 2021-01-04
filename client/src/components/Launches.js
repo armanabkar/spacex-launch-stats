@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import LaunchItem from "./LaunchItem";
@@ -15,10 +15,14 @@ const LAUNCHES_QUERY = gql`
   }
 `;
 
-export class Launches extends Component {
+class Launches extends Component {
+  state = {
+    showMore: false,
+  };
+
   render() {
     return (
-      <Fragment>
+      <>
         <div className="launches">
           <h1 className="display-4 my-3">Launches</h1>
           <MissionKey />
@@ -29,19 +33,46 @@ export class Launches extends Component {
             if (error) console.log(error);
 
             return (
-              <Fragment>
-                {data.launches
-                  .sort((a, b) =>
-                    a.launch_date_local > b.launch_date_local ? -1 : 1
-                  )
-                  .map((launch) => (
-                    <LaunchItem key={launch.flight_number} launch={launch} />
-                  ))}
-              </Fragment>
+              <>
+                {this.state.showMore ? (
+                  <>
+                    {data.launches
+                      .sort((a, b) =>
+                        a.launch_date_local > b.launch_date_local ? -1 : 1
+                      )
+                      .map((launch) => (
+                        <LaunchItem
+                          key={launch.flight_number}
+                          launch={launch}
+                        />
+                      ))}
+                  </>
+                ) : (
+                  <>
+                    {data.launches
+                      .sort((a, b) =>
+                        a.launch_date_local > b.launch_date_local ? -1 : 1
+                      )
+                      .slice(0, 15)
+                      .map((launch) => (
+                        <LaunchItem
+                          key={launch.flight_number}
+                          launch={launch}
+                        />
+                      ))}
+                    <p
+                      onClick={() => this.setState({ showMore: true })}
+                      className="show-more"
+                    >
+                      Show More
+                    </p>
+                  </>
+                )}
+              </>
             );
           }}
         </Query>
-      </Fragment>
+      </>
     );
   }
 }
