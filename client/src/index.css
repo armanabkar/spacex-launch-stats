@@ -24,14 +24,10 @@ code {
   float: right;
 }
 
-.success {
-  color: #77b300;
-  font-size: 1rem;
-}
-
-.fail {
-  color: #cc0000;
-  font-size: 1rem;
+.status {
+  font-size: 0.9rem;
+  margin-left: 0.3rem;
+  font-style: italic;
 }
 
 @media (min-width: 767px) {

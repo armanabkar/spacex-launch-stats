@@ -19,6 +19,11 @@ export default function LaunchItem({
               })}
             >
               {mission_name}
+              {launch_success ? (
+                <sub className="status">succeed</sub>
+              ) : (
+                <sub className="status">failed</sub>
+              )}
             </span>
           </h4>
           <p>
