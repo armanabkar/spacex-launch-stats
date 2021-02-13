@@ -34,12 +34,13 @@ cd client && npm run build
 
 ### Author
 
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
+Created by Brad Traversy
+[Traversy Media](http://www.traversymedia.com) 
+and modified by [Arman Abkar](https://armanabkar.ir).
 
 ### Version
 
-1.0.0
+2.0.0
 
 ### License
 
