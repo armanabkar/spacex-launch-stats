@@ -36,7 +36,7 @@ cd client && npm run build
 
 Created by Brad Traversy
 [Traversy Media](http://www.traversymedia.com) 
-and modified by [Arman Abkar](https://armanabkar.ir).
+and modified by Arman.
 
 ### Version
 
